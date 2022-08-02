@@ -2,6 +2,7 @@ const { application } = require("express");
 const express = require("express");
 const app = express();
 const ourWord = "lucky";
+const port = process.env.PORT || 3000
 
 app.get("/wordle/:guess", function (req, res) {
   let ourWordMap = {
@@ -37,4 +38,4 @@ app.get("/wordle/:guess", function (req, res) {
   res.send(resArr);
 });
 app.use(express.static("public"));
-app.listen(3000);
+app.listen(port);
